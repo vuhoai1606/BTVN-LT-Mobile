@@ -40,9 +40,17 @@ kotlin {
             implementation(libs.compose.ui)
             implementation(libs.compose.components.resources)
             implementation(libs.compose.uiToolingPreview)
-            implementation(libs.androidx.lifecycle.viewmodelCompose)
-            implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(compose.materialIconsExtended) // Thêm dòng này
+
+//            // này là LIBS cũ, LIBS mới đã được thm vào dưới cái "org.jetbrains.androidx.navigation:navigation-compose:2.8.0-alpha10"
+//            implementation(libs.androidx.lifecycle.viewmodelCompose)
+//            implementation(libs.androidx.lifecycle.runtimeCompose)
+
+
+            // THÊM ĐÚNG DÒNG NÀY VÀO ĐỂ TẢI THƯ VIỆN NAVIGATION CHO KMP:
+            implementation("org.jetbrains.androidx.navigation:navigation-compose:2.9.2")
+            implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
+            implementation("org.jetbrains.androidx.savedstate:savedstate-compose:1.4.0")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
