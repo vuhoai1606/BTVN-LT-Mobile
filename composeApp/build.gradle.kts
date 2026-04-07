@@ -7,6 +7,10 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.composeHotReload)
+    // Bật tính năng đọc file google-services.json cho Android
+    id("com.google.gms.google-services")
+
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -32,6 +36,15 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.activity.compose)
+
+            // Cung cấp danh sách phiên bản (BOM) cho Firebase Android
+            implementation(project.dependencies.platform("com.google.firebase:firebase-bom:33.0.0"))
+
+            // Ktor OkHttp engine cho Android
+            implementation(libs.ktor.client.okhttp)
+            
+            // Cloudinary Android SDK
+            implementation("com.cloudinary:cloudinary-android:2.5.0")
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -51,6 +64,22 @@ kotlin {
             implementation("org.jetbrains.androidx.navigation:navigation-compose:2.9.2")
             implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
             implementation("org.jetbrains.androidx.savedstate:savedstate-compose:1.4.0")
+
+            // BỘ 3 THƯ VIỆN FIREBASE CHO KMP (AUTH, FIRESTORE, STORAGE)
+            implementation("dev.gitlive:firebase-auth:1.11.1")
+            implementation("dev.gitlive:firebase-firestore:1.11.1")
+            implementation("dev.gitlive:firebase-storage:1.11.1")
+
+            // THƯ VIỆN XỬ LÝ JSON
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+
+            // KTOR CLIENT - HTTP requests cho Cloudinary
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.json)
+
+            // KAMEL - Image loading cho Compose Multiplatform
+            implementation(libs.kamel.image)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -58,6 +87,13 @@ kotlin {
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
+
+            // Ktor Java engine cho Desktop/JVM
+            implementation(libs.ktor.client.java)
+        }
+        iosMain.dependencies {
+            // Ktor Darwin engine cho iOS
+            implementation(libs.ktor.client.darwin)
         }
     }
 }
