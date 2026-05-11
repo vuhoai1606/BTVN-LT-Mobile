@@ -36,9 +36,10 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.activity.compose)
+            implementation("androidx.work:work-runtime-ktx:2.10.0")
 
             // Cung cấp danh sách phiên bản (BOM) cho Firebase Android
-            implementation(project.dependencies.platform("com.google.firebase:firebase-bom:33.0.0"))
+            implementation(project.dependencies.platform("com.google.firebase:firebase-bom:32.7.0"))
 
             // Ktor OkHttp engine cho Android
             implementation(libs.ktor.client.okhttp)

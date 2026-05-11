@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "189300941666",
-    "project_id": "gk-mobile-25-26",
-    "storage_bucket": "gk-mobile-25-26.firebasestorage.app"
+    "project_number": "1088515447359",
+    "project_id": "lab-8-7db19",
+    "storage_bucket": "lab-8-7db19.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:189300941666:android:b2196967aa7307c1c1023b",
+        "mobilesdk_app_id": "1:1088515447359:android:f003a6d82db1926af7b68a",
         "android_client_info": {
           "package_name": "org.example.btvnkotlin"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDXLGvG_OYS01Als9HJ27kw6j71NqmKpz4"
+          "current_key": "AIzaSyCGl6EM7R0iT59CuVXQLjnNiS3DuqqPn90"
         }
       ],
       "services": {
