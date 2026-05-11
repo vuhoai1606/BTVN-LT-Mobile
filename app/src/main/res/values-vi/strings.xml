@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2023 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <string name="app_name">Quản lý kho</string>
+    <string name="attention">Chú ý</string>
+    <string name="back_button">Quay lại</string>
+    <string name="delete">Xóa</string>
+    <string name="delete_question">Bạn có chắc chắn muốn xóa không?</string>
+    <string name="no_item_description">Rất tiếc!\nKhông có sản phẩm nào trong kho.\nNhấn + để thêm mới.</string>
+    <string name="edit_item_title">Chỉnh sửa sản phẩm</string>
+    <string name="item">Sản phẩm</string>
+    <string name="item_detail_title">Chi tiết sản phẩm</string>
+    <string name="item_entry_title">Thêm sản phẩm</string>
+    <string name="item_name_req">Tên sản phẩm*</string>
+    <string name="item_price_req">Giá sản phẩm*</string>
+    <string name="no">Không</string>
+    <string name="price">Giá</string>
+    <string name="quantity_in_stock">Số lượng hiện có</string>
+    <string name="in_stock">Còn %d trong kho</string>
+    <string name="quantity_req">Số lượng trong kho*</string>
+    <string name="save_action">Lưu</string>
+    <string name="sell">Bán</string>
+    <string name="yes">Có</string>
+    <string name="required_fields">*Trường bắt buộc</string>
+</resources>
