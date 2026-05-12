@@ -2,11 +2,19 @@ package org.example.btvnkotlin
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.*
 import com.example.authentication.MyNavigation
 import com.example.authentication.ui.theme.Lab8AuthTheme
- import org.example.btvnkotlin.Week6_03_17.CupcakeApp
- import org.example.btvnkotlin.Week6_03_17.ui.theme.CupcakeTheme
- import org.example.btvnkotlin.Week9_04_14.ui.Week9WorkManagerScreen
+import org.example.btvnkotlin.Week6_03_17.CupcakeApp
+import org.example.btvnkotlin.Week6_03_17.ui.theme.CupcakeTheme
+import org.example.btvnkotlin.Week7_03_24.ListCoursesScreen
+import org.example.btvnkotlin.Week7_03_24.UpdateCourseScreen
+import org.example.btvnkotlin.Week7_03_24.AddCourseScreen
+import org.example.btvnkotlin.Week7_03_24.model.Course
+import org.example.btvnkotlin.Week7_03_24.ui.theme.AppTheme
+
+// Định nghĩa các Route
+enum class Screen { ADD, LIST, UPDATE }
 
 @Composable
 @Preview
@@ -23,11 +31,38 @@ fun App() {
 //    CupcakeTheme {
 //        CupcakeApp()
 //    }
+    // Dòng này dùng cho lab 7
+    var currentScreen by remember { mutableStateOf(Screen.ADD) }
+    var selectedCourse by remember { mutableStateOf<Course?>(null) }
 
-    // Dòng này dùng cho lab 8
-    Lab8AuthTheme {
-        MyNavigation()
+    // Bọc toàn bộ ứng dụng bằng Theme tự tạo
+    AppTheme {
+        when (currentScreen) {
+            Screen.ADD -> AddCourseScreen(
+                onNavigateToList = { currentScreen = Screen.LIST }
+            )
+
+            Screen.LIST -> ListCoursesScreen(
+                onNavigateToAdd = { currentScreen = Screen.ADD },
+                onNavigateToUpdate = { course ->
+                    selectedCourse = course
+                    currentScreen = Screen.UPDATE
+                }
+            )
+
+            Screen.UPDATE -> selectedCourse?.let { course ->
+                UpdateCourseScreen(
+                    course = course,
+                    onNavigateToList = { currentScreen = Screen.LIST }
+                )
+            }
+        }
     }
+
+//    // Dòng này dùng cho lab 8
+//    Lab8AuthTheme {
+//        MyNavigation()
+//    }
 
 //    // Dòng này dùng cho Thi GK
 //    val navController = rememberNavController()

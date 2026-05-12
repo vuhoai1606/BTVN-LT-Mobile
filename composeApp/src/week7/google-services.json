@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "283015242554",
+    "project_id": "lab-7-8d9e0",
+    "storage_bucket": "lab-7-8d9e0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283015242554:android:9ce0bdff0983841f552603",
+        "android_client_info": {
+          "package_name": "org.example.btvnkotlin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbT4XOItgNhojEKyfkpnprhTdsHtHhF6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

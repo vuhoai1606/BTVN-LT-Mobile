@@ -38,7 +38,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation("androidx.work:work-runtime-ktx:2.10.0")
 
-            // Cung cấp danh sách phiên bản (BOM) cho Firebase Android
+            // Firebase BOM cho Android (giữ bản còn hỗ trợ artifact -ktx mà gitlive 1.11.1 đang dùng)
             implementation(project.dependencies.platform("com.google.firebase:firebase-bom:32.7.0"))
 
             // Ktor OkHttp engine cho Android
@@ -102,6 +102,16 @@ kotlin {
 android {
     namespace = "org.example.btvnkotlin"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
+    flavorDimensions += "lab"
+
+    productFlavors {
+        create("week7") {
+            dimension = "lab"
+        }
+        create("week8") {
+            dimension = "lab"
+        }
+    }
 
     defaultConfig {
         applicationId = "org.example.btvnkotlin"
