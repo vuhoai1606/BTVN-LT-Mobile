@@ -31,38 +31,38 @@ fun App() {
 //    CupcakeTheme {
 //        CupcakeApp()
 //    }
-    // Dòng này dùng cho lab 7
-    var currentScreen by remember { mutableStateOf(Screen.ADD) }
-    var selectedCourse by remember { mutableStateOf<Course?>(null) }
-
-    // Bọc toàn bộ ứng dụng bằng Theme tự tạo
-    AppTheme {
-        when (currentScreen) {
-            Screen.ADD -> AddCourseScreen(
-                onNavigateToList = { currentScreen = Screen.LIST }
-            )
-
-            Screen.LIST -> ListCoursesScreen(
-                onNavigateToAdd = { currentScreen = Screen.ADD },
-                onNavigateToUpdate = { course ->
-                    selectedCourse = course
-                    currentScreen = Screen.UPDATE
-                }
-            )
-
-            Screen.UPDATE -> selectedCourse?.let { course ->
-                UpdateCourseScreen(
-                    course = course,
-                    onNavigateToList = { currentScreen = Screen.LIST }
-                )
-            }
-        }
-    }
-
-//    // Dòng này dùng cho lab 8
-//    Lab8AuthTheme {
-//        MyNavigation()
+//    // Dòng này dùng cho lab 7
+//    var currentScreen by remember { mutableStateOf(Screen.ADD) }
+//    var selectedCourse by remember { mutableStateOf<Course?>(null) }
+//
+//    // Bọc toàn bộ ứng dụng bằng Theme tự tạo
+//    AppTheme {
+//        when (currentScreen) {
+//            Screen.ADD -> AddCourseScreen(
+//                onNavigateToList = { currentScreen = Screen.LIST }
+//            )
+//
+//            Screen.LIST -> ListCoursesScreen(
+//                onNavigateToAdd = { currentScreen = Screen.ADD },
+//                onNavigateToUpdate = { course ->
+//                    selectedCourse = course
+//                    currentScreen = Screen.UPDATE
+//                }
+//            )
+//
+//            Screen.UPDATE -> selectedCourse?.let { course ->
+//                UpdateCourseScreen(
+//                    course = course,
+//                    onNavigateToList = { currentScreen = Screen.LIST }
+//                )
+//            }
+//        }
 //    }
+
+    // Dòng này dùng cho lab 8
+    Lab8AuthTheme {
+        MyNavigation()
+    }
 
 //    // Dòng này dùng cho Thi GK
 //    val navController = rememberNavController()
